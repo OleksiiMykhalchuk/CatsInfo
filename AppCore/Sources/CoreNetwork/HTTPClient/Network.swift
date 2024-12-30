@@ -38,10 +38,10 @@ public struct Network: Networking {
     private func sendRequest(_ request: Request) async throws -> Data {
         var request = request
         let req = request.make()
-        logger.debug("\(request)")
+//        logger.debug("\(request)")
         let (data, response) = try await session.data(for: req)
         let urlResponse = response as? HTTPURLResponse
-        logger.debug("Response: \(response)")
+//        logger.debug("Response: \(response)")
         logger.debug("Data: \(String(data: data, encoding: .utf8) ?? "unknown data")")
         guard let urlResponse , (200 ..< 299).contains(urlResponse.statusCode) else {
             logger.error("Bad Response Status Code: \(urlResponse?.statusCode ?? -999)")

@@ -12,6 +12,7 @@ import CoreModel
 protocol AnimalNetworkService {
     func getBreads(page: Int) async throws -> [BreedModel]
     func getImage(id: String) async throws -> ImageModel?
+    func getSearch(query: String) async throws -> [BreedModel] 
 }
 
 struct CatsNetworkService: AnimalNetworkService {
@@ -50,6 +51,21 @@ struct CatsNetworkService: AnimalNetworkService {
             path: "/images/\(id)",
             method: .get,
             params: nil,
+            headers: defaultHeaders
+        )
+        return try await network.fetch(request, coder: AppCoder())
+    }
+
+    func getSearch(query: String) async throws -> [BreedModel] {
+        guard let url = baseURL.url else { return [] }
+        let request = Request(
+            url: url,
+            path: "/breeds/search",
+            method: .get,
+            params: [
+                URLQueryItem(name: "q", value: query),
+                URLQueryItem(name: "attach_image", value: "1")
+            ],
             headers: defaultHeaders
         )
         return try await network.fetch(request, coder: AppCoder())
