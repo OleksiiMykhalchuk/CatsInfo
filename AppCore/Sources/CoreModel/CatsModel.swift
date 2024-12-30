@@ -8,5 +8,6 @@
 import Foundation
 
 struct CatsModel: Codable, Sendable, Identifiable, Hashable {
-    let id: UUID
+    let id: String
+    let name: String
 }
