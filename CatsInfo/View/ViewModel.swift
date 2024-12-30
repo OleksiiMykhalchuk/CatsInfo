@@ -17,7 +17,7 @@ final class ViewModel {
 
     private var page = 0
 
-    var breeds: [BreadModel] = []
+    var breeds: [BreedModel] = []
 
     init(service: AnimalNetworkService = CatsNetworkService(network: Network(session: .shared))) {
         self.service = service

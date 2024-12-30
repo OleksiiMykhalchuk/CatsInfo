@@ -7,7 +7,13 @@
 
 import Foundation
 
-public struct BreadModel: Codable, Identifiable, Hashable, Sendable {
+public protocol BreedProtocol {
+    var id: String { get }
+    var name: String { get }
+    var referenceImageId: String { get }
+}
+
+public struct BreedModel: Codable, Identifiable, Hashable, Sendable, BreedProtocol {
     public let id: String
     public let name: String
     public let referenceImageId: String

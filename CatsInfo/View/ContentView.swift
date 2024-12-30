@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreNetwork
+import CoreUI
 
 struct ContentView: View {
 
@@ -20,15 +20,8 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 200))]) {
-                    ForEach(viewModel.breeds, id: \.id) { breed in
-                        Text(breed.name)
-                            .onTapGesture {
-                                path.append(breed.name)
-                            }
-                    }
-                }
+            AnimalGridView(data: viewModel.breeds) { imageId in
+                path.append(imageId)
             }
             .navigationTitle("Breeds")
             .navigationDestination(for: String.self, destination: { name in

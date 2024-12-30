@@ -10,7 +10,7 @@ import Foundation
 import CoreModel
 
 protocol AnimalNetworkService {
-    func getBreads(page: Int) async throws -> [BreadModel]
+    func getBreads(page: Int) async throws -> [BreedModel]
     func getImage(id: String) async throws -> ImageModel?
 }
 
@@ -28,7 +28,7 @@ struct CatsNetworkService: AnimalNetworkService {
         self.network = network
     }
 
-    func getBreads(page: Int) async throws -> [BreadModel] {
+    func getBreads(page: Int) async throws -> [BreedModel] {
         guard let url = baseURL.url else { return [] }
         let request = Request(
             url: url,

@@ -10,9 +10,9 @@ import Foundation
 public struct ImageModel: Codable, Hashable, Sendable, Identifiable {
     public let id: String
     public let url: String
-    public let breeds: [BreadModel]
+    public let breeds: [BreedModel]
 
-    public init(id: String, url: String, breeds: [BreadModel]) {
+    public init(id: String, url: String, breeds: [BreedModel]) {
         self.id = id
         self.url = url
         self.breeds = breeds
