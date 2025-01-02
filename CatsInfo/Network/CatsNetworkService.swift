@@ -9,7 +9,7 @@ import CoreNetwork
 import Foundation
 import CoreModel
 
-protocol AnimalNetworkService {
+protocol AnimalNetworkService: Sendable {
     func getBreads(page: Int) async throws -> [BreedModel]
     func getImage(id: String) async throws -> ImageModel?
     func getSearch(query: String) async throws -> [BreedModel] 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Networking {
+public protocol Networking: Sendable {
 
     init(session: URLSession)
 
