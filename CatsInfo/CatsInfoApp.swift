@@ -11,7 +11,7 @@ import SwiftUI
 struct CatsInfoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(path: NavigationPath(), viewModel: ViewModel())
         }
     }
 }
