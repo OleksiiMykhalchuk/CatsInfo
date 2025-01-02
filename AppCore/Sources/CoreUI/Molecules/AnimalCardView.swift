@@ -14,7 +14,7 @@ struct AnimalCardView: View {
 
     var body: some View {
         ZStack {
-            AnimalImageView(url: url)
+            CachedAsyncImage(url: url)
             PrimaryLabel(text: breed)
         }
     }

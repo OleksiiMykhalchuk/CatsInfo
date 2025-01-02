@@ -41,7 +41,7 @@ struct CatsNetworkService: AnimalNetworkService {
             ],
             headers: defaultHeaders
         )
-        return try await network.fetch(request, coder: AppCoder())
+        return try await network.fetchArray(request, coder: AppCoder())
     }
 
     func getImage(id: String) async throws -> ImageModel? {
@@ -68,6 +68,6 @@ struct CatsNetworkService: AnimalNetworkService {
             ],
             headers: defaultHeaders
         )
-        return try await network.fetch(request, coder: AppCoder())
+        return try await network.fetchArray(request, coder: AppCoder())
     }
 }

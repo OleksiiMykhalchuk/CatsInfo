@@ -13,7 +13,7 @@ struct AnimalDetailsCard: View {
     let desription: String
     var body: some View {
         VStack {
-            AnimalImageView(url: url)
+            CachedAsyncImage(url: url)
             PrimaryLabel(text: name)
             PrimaryLabel(text: desription)
         }
