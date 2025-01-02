@@ -6,7 +6,7 @@ This repository contains a simple iOS application task built using SwiftUI that 
 - [Features](#features)
 - [Architecture](#architecture)
 - [Technologies Used](#technologies-used)
-- [Installation](#instalation)
+- [Installation](#installation)
 - [Screenshots](#screenshots)
 - [Time Spent](#time-spent)
 - [Credits](#credits)
